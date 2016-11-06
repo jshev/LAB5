@@ -137,7 +137,6 @@ public class PokerTableController implements Initializable {
 	}
 
 	public void Handle_TableState(Table HubPokerTable) {
-
 		//TODO: If this message is called, that means there
 		//		was a change to the state of the Table (player
 		//		probably ran 'sit' or 'leave'
@@ -180,7 +179,6 @@ public class PokerTableController implements Initializable {
 
 		ImageView i5 = new ImageView(new Image(getClass().getResourceAsStream("/img/30.png"), 75, 75, true, true));
 		hboxP1Cards.getChildren().add(i5);
-
 	}
 
 	@FXML
@@ -199,7 +197,6 @@ public class PokerTableController implements Initializable {
 		case "btnPlayer4Fold":
 			// Fold for Player 4
 			break;
-
 		}
 	}
 
@@ -231,6 +228,4 @@ public class PokerTableController implements Initializable {
 
 		ft.play();
 	}
-
-
 }

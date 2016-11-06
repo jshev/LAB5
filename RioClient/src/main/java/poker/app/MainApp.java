@@ -75,7 +75,6 @@ public class MainApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
 		// START is executed by the Application framework after INIT
 		BorderPane root = new BorderPane();
 		Scene scene = new Scene(root, 500, 500);
@@ -93,7 +92,6 @@ public class MainApp extends Application {
 	}
 
 	public void showPoker(boolean bStartHub, String strComputerName, int iPort, String strPlayerName) {
-
 		if (bStartHub) {
 			try {
 				pHub = new PokerHub(iPort);
@@ -138,7 +136,6 @@ public class MainApp extends Application {
 
 	public void initRootLayout() {
 		try {
-			
 			Screen screen = Screen.getPrimary();
 			Rectangle2D bounds = screen.getVisualBounds();
 
@@ -260,7 +257,6 @@ public class MainApp extends Application {
 			});
 		}
 		
-		
 		@Override
 		/*
 		 * serverShutdown - Call the hard exit.
@@ -272,7 +268,5 @@ public class MainApp extends Application {
 		        System.exit(0);
 			});
 	    }
-	
-
 	}
 }
