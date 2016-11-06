@@ -52,16 +52,29 @@ public class PokerHub extends Hub {
 
 		if (message instanceof Action) {
 			
+			if (((Action) message).getAction() == eAction.StartGame) {
+				
+			}
 			//TODO: If the Action = StartGame, start the game...
 			//		Create an instance of GamePlay, set all the parameters
 			
+			else if (((Action) message).getAction() == eAction.Sit) {
+				HubPokerTable.AddPlayerToTable(p);//TODO - who calls this method, what player gets added?
+			}
 			//TODO: If Action = Sit, add the player to the table
-			
-			//TODO: If Action = Leave, remove the player from the table
-			
 			//TODO: If Action = Sit or Leave, send the Table
 			//		back to the client
 			
+			else if (((Action) message).getAction() == eAction.Leave) {
+				HubPokerTable.RemovePlayerFromTable(p);//TODO - who calls this method, what player gets removed?
+			}
+			//TODO: If Action = Leave, remove the player from the table
+			//TODO: If Action = Sit or Leave, send the Table
+			//		back to the client
+			
+			else if (((Action) message).getAction() == eAction.GameState) {
+				
+			}
 			//TODO: If Action = GameState, send HubGamePlay 
 			//		back to the client
 		}
