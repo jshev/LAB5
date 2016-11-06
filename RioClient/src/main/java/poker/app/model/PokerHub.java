@@ -66,7 +66,7 @@ public class PokerHub extends Hub {
 			//		back to the client
 			
 			else if (((Action) message).getAction() == eAction.Leave) {
-				HubPokerTable.RemovePlayerFromTable(p);//TODO - who calls this method, what player gets removed?
+				HubPokerTable.RemovePlayerFromTable(p);//TODO - who calls this method, what player gets removed? 
 			}
 			//TODO: If Action = Leave, remove the player from the table
 			//TODO: If Action = Sit or Leave, send the Table
