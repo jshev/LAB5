@@ -26,7 +26,6 @@ import pokerEnums.eGame;
 import pokerEnums.eGameState;
 
 public class PokerHub extends Hub {
-	// comment
 
 	private Table HubPokerTable = new Table();
 	private GamePlay HubGamePlay;
@@ -38,7 +37,6 @@ public class PokerHub extends Hub {
 	}
 
 	protected void playerConnected(int playerID) {
-
 		if (playerID == 2) {
 			shutdownServerSocket();
 		}
@@ -49,39 +47,28 @@ public class PokerHub extends Hub {
 	}
 
 	protected void messageReceived(int ClientID, Object message) {
-
 		if (message instanceof Action) {
-			
-			if (((Action) message).getAction() == eAction.StartGame) {
-				
+			Action action = (Action) message;
+			switch (action.getAction()) {
+			case StartGame:
+				new GamePlay(null, null);
+				break;
+			case Sit:
+				HubPokerTable.AddPlayerToTable(action.getPlayer());
+				sendToAll((Object) HubPokerTable);
+				break;
+			case Leave:
+				HubPokerTable.RemovePlayerFromTable(action.getPlayer());
+				sendToAll((Object) HubPokerTable);
+				break;
+			case GameState:
+				sendToAll((Object) HubGamePlay);
+				break;
 			}
-			//TODO: If the Action = StartGame, start the game...
-			//		Create an instance of GamePlay, set all the parameters
-			
-			else if (((Action) message).getAction() == eAction.Sit) {
-				HubPokerTable.AddPlayerToTable(p);//TODO - who calls this method, what player gets added?
-			}
-			//TODO: If Action = Sit, add the player to the table
-			//TODO: If Action = Sit or Leave, send the Table
-			//		back to the client
-			
-			else if (((Action) message).getAction() == eAction.Leave) {
-				HubPokerTable.RemovePlayerFromTable(p);//TODO - who calls this method, what player gets removed? 
-			}
-			//TODO: If Action = Leave, remove the player from the table
-			//TODO: If Action = Sit or Leave, send the Table
-			//		back to the client
-			
-			else if (((Action) message).getAction() == eAction.GameState) {
-				
-			}
-			//TODO: If Action = GameState, send HubGamePlay 
-			//		back to the client
 		}
 
 		System.out.println("Message Received by Hub");
 		
 		sendToAll("Sending Message Back to Client");
 	}
-
 }
