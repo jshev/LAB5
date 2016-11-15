@@ -46,11 +46,7 @@
                            </image>
                         </ImageView>
                      </children></HBox>
-                  <HBox id="txtPlayer1Name" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <children>
-                        <Label id="txtPos1Name" fx:id="lblPos1Name" />
-                     </children>
-                  </HBox>
+                  <HBox id="txtPlayer1Name" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1" />
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
                         <FlowPane prefHeight="95.0" prefWidth="130.0">
@@ -65,6 +61,7 @@
                         </FlowPane>
                      </children>
                   </HBox>
+                  <Label fx:id="lblPos1" />
                </children>
             </GridPane>
          </children>
@@ -157,6 +154,7 @@
                               <Image url="@../../../../resources/img/d-button.png" />
                            </image>
                         </ImageView>
+                        <Label id="lblPos2" fx:id="lblPos2" text="Label" />
                      </children>
                   </HBox>
                </children>
@@ -195,6 +193,7 @@
                               <Button id="btnPlayer1Fold" maxWidth="100.0" minWidth="75.0" mnemonicParsing="false" prefWidth="80.0" text="Raise" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Button maxWidth="100.0" mnemonicParsing="false" prefWidth="80.0" text="Bet" GridPane.rowIndex="2" />
                               <Button id="btnPlayer4Check" maxWidth="100.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnCheck_Click" prefWidth="93.0" text="Check" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label id="lblPos4" fx:id="lblPos4" />
                            </children>
                         </GridPane>
                      </children>
@@ -215,7 +214,7 @@
                               <Image url="@../../../../resources/img/d-button.png" />
                            </image>
                         </ImageView>
-                        <ToggleButton id="btnPos2SitLeave" fx:id="btnPos4SitLeave" mnemonicParsing="false" onAction="#btnSitLeave_Click" styleClass="togglebutton" stylesheets="@DarkTheme.css" text="Sit" />
+                        <ToggleButton id="btnPos4SitLeave" fx:id="btnPos4SitLeave" mnemonicParsing="false" onAction="#btnSitLeave_Click" styleClass="togglebutton" stylesheets="@DarkTheme.css" text="Sit" />
                      </children>
                   </HBox>
                </children>
@@ -270,7 +269,7 @@
                      <children>
                         <FlowPane prefHeight="11.0" prefWidth="130.0">
                            <children>
-                              <ToggleButton id="btnPos1SitLeave" fx:id="btnPos3SitLeave" mnemonicParsing="false" onAction="#btnSitLeave_Click" styleClass="togglebutton" stylesheets="@DarkTheme.css" text="Sit" />
+                              <ToggleButton id="btnPos3SitLeave" fx:id="btnPos3SitLeave" mnemonicParsing="false" onAction="#btnSitLeave_Click" styleClass="togglebutton" stylesheets="@DarkTheme.css" text="Sit" />
                               <ImageView id="imgViewDealerButtonPos1" fx:id="imgViewDealerButtonPos3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../resources/img/d-button.png" />
@@ -280,6 +279,7 @@
                         </FlowPane>
                      </children>
                   </HBox>
+                  <Label id="lblPos3" fx:id="lblPos3" />
                </children>
             </GridPane>
          </children>
